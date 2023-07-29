@@ -40,7 +40,7 @@ message LoginRequest
     bytes pwd = 2;
 }
 
-// 登录相应消息类型
+// 登录响应消息类型
 message LoginResponse
 {
     ErrorMsg error = 1;
