@@ -1,0 +1,4 @@
+1901:19:40 => INFO : MPrpcApplication need be used!
+1901:19:40 => ERROR : MPrpcApplication need be used!
+1:20:11 => INFO : MPrpcApplication need be used!
+1:20:11 => ERROR : MPrpcApplication need be used!

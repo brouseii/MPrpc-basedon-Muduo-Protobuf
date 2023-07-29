@@ -1,0 +1,67 @@
+syntax = "proto3";  // 声明protobuf的版本
+
+package fixbug;     // 声明代码所在的包，对应C++中的namespace
+
+/* 
+    // 运行protoc 来生成c++文件 
+    protoc ./test.proto --cpp_out=./ 
+    // 生成的文件：后缀为xxxx.pb.h的头文件，后缀为xxxx.pb.cc的源文件
+*/
+
+//下面的选项，表示生成service服务类和rpc方法描述，默认不生成
+option cc_generic_services = true;
+
+// message里面的都是变量，没有方法 
+message ErrorMsg
+{
+    int32 error = 1;
+    bytes error_msg = 2;
+}
+
+message User
+// message User  <==>  class User:public google::protobuf::Message
+{
+    bytes name = 1;
+    uint32 age = 2;
+    
+    enum Sex
+    {
+        man = 0;
+        woman = 1;
+    }
+    Sex sex = 3;
+}
+
+// 登录请求消息类型
+message LoginRequest        
+// message LoginRequest  <==>  class LoginRequest : public ::google::protobuf::Message
+{
+    bytes name = 1;    //1表示是第一个字段
+    bytes pwd = 2;
+}
+
+// 登录相应消息类型
+message LoginResponse
+{
+    ErrorMsg error = 1;
+    bool success = 2;
+}
+
+message GetFriendListsRequest
+{
+    uint32 userid = 1;
+}
+
+message GetFriendListsResponse
+{
+    ErrorMsg error = 1;
+    repeated User friendlists = 2;   // repeated表示生成的friendlists字段可重复，即是一个列表
+}
+
+service UserServiceRpc
+// service UserServiceRpc  <==>  class UserServiceRpc : public ::google::protobuf::service
+{
+	rpc login(LoginResponse) returns(LoginResponse);
+	rpc GetFriendLists(GetFriendListsRequest) returns(GetFriendListsResponse);
+}
+// 注意：protobuf只提供了对rpc方法的描述，并不提供rpc功能

@@ -1,0 +1,13 @@
+/home/learning_test_programm/MPRPC/build/CMakeFiles/rebuild_cache.dir
+/home/learning_test_programm/MPRPC/build/CMakeFiles/edit_cache.dir
+/home/learning_test_programm/MPRPC/build/src/CMakeFiles/rebuild_cache.dir
+/home/learning_test_programm/MPRPC/build/src/CMakeFiles/edit_cache.dir
+/home/learning_test_programm/MPRPC/build/src/CMakeFiles/mprpc.dir
+/home/learning_test_programm/MPRPC/build/example/CMakeFiles/rebuild_cache.dir
+/home/learning_test_programm/MPRPC/build/example/CMakeFiles/edit_cache.dir
+/home/learning_test_programm/MPRPC/build/example/caller/CMakeFiles/rebuild_cache.dir
+/home/learning_test_programm/MPRPC/build/example/caller/CMakeFiles/edit_cache.dir
+/home/learning_test_programm/MPRPC/build/example/caller/CMakeFiles/consumer.dir
+/home/learning_test_programm/MPRPC/build/example/callee/CMakeFiles/edit_cache.dir
+/home/learning_test_programm/MPRPC/build/example/callee/CMakeFiles/rebuild_cache.dir
+/home/learning_test_programm/MPRPC/build/example/callee/CMakeFiles/provider.dir

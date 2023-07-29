@@ -1,0 +1,5 @@
+# 需要需要新增rpc服务时，需要先定义“服务和方法的参数和响应以及方法调用关系的.proto文件”，并编译
+protoc ./friend.proto --cpp_out=./
+protoc ./user.proto --cpp_out=./
+# 会产生两个.pb.cc和.pb.h文件
+# 接下来才能定义，callee中的***Service.cpp、caller中的Call***.cpp
