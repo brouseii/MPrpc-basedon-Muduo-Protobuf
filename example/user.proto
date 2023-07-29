@@ -23,7 +23,7 @@ message LoginResponse  // message LoginResponse <==> class LoginResponse : publi
     bool success = 2;
 }
 
-message SignupRequest   // message SignupRequest <==> class LoginRequest : public ::google::protobuf::Message
+message SignupRequest   // message SignupRequest <==> class SignupRequest : public ::google::protobuf::Message
 {
     bytes name = 1;
     bytes pwd = 2;
