@@ -48,7 +48,7 @@ void MPrpcApplication::Init(int argc, char** argv)
     }
 
     // 获取配置文件 configFile:
-    // zookeeper_ip=***、zookeeper_port=***、rpcserver_port=***、rpcserver_ip=*** 
+    // zookeeperip=***、zookeeperport=***、rpcserverport=***、rpcserverip=*** 
     _mPrpcConfig.LoadConfigFile(configFile.c_str());
 
     /*
