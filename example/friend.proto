@@ -5,24 +5,24 @@ package fixbug;
 // 下面的选项，表示生成service服务类和rpc方法描述（默认不会生成）
 option cc_generic_services = true;
 
-message ResultCode       
+message ResultCode        // message ResultCode <==> class ResultCode : public ::google::protobuf::Message
 {
     int32 errcode = 1;   
     bytes errmsg = 2;     
 }
 
-message GetFriendListsRequest
+message GetFriendListsRequest  // message GetFriendListsRequest <==> class GetFriendListsRequest : public ::google::protobuf::Message
 {
     uint32 userid = 1;
 }
 
-message GetFriendListsResponse
+message GetFriendListsResponse   // message GetFriendListsResponse <==> class GetFriendListsResponse : public ::google::protobuf::Message
 {
     ResultCode result = 1;
     repeated bytes friendlists = 2;
 }
 
-service FriendServiceRpc
+service FriendServiceRpc    // service FriendServiceRpc <==> class FriendServiceRpc : public ::google::protobuf::Service
 {
     rpc GetFriendLists(GetFriendListsRequest) returns(GetFriendListsResponse);
 }
