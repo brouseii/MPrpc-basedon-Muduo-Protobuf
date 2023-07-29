@@ -27,7 +27,7 @@ private:
     LockQueue<std::string> _lockQueue;   // 日志缓冲队列
 
     /* 采用单例模式 */
-    // 开启写日志线程
+    // 开启“写日志线程”，将日志记录写入日志文件
     Logger();
     // 禁用拷贝构造函数和移动拷贝构造函数
     Logger(const Logger&) = delete;
