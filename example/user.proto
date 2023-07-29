@@ -17,7 +17,7 @@ message LoginRequest   // message LoginRequest <==> class LoginRequest : public 
     bytes pwd = 2;
 }
 
-message LoginResponse  // message LoginResponse <==> class LoginRequest : public ::google::protobuf::Message
+message LoginResponse  // message LoginResponse <==> class LoginResponse : public ::google::protobuf::Message
 {
     ResultCode result = 1;
     bool success = 2;
