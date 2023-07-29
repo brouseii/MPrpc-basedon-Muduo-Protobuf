@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package fixbug;
 
+// 下面的选项，表示生成service服务类和rpc方法描述（默认不会生成）
 option cc_generic_services = true;
 
 message ResultCode
@@ -39,3 +40,6 @@ service UserServiceRpc
     rpc Login(LoginRequest) returns(LoginResponse);
     rpc Signup(SignupRequest) returns(SignupResponse);
 }
+
+// 注意：protobuf只提供了对rpc方法的描述，并不提供rpc功能
+//，即protobuf中只是定义了rpc方法的定义/调用规范并没有具体的实现。
