@@ -360,7 +360,19 @@ make install
 # 刷新链接库的缓存
 ldconfig 
 ```
+zookeeper原生提供了C和Java的客户端编程接口，但是使用起来相对复杂，几个要点：
 
+1. 源码上，`session timeout=30s`，即在1/3的Timeout时间`zkClient`的网络IO线程会发送ping心跳消息给`zkServer`，接收到响应后会重置`session timeout=30s`并重新开始该心跳过程，以此`zkClient`证明了自己还存在。
+
+   ![image-20230729201131888](./pictures/image-20230729201131888.png)
+
+   一旦超过`session timeout`时间`zkServer`仍未收到来自`zkClient`的心跳包，则证明服务已经下线，则zookeeper`自动删除对应的`znode`临时节点，即就无法再通过zookeeper找到该服务的`host=ip:port`。
+
+   ![](./pictures/zk-心跳机制.png)
+
+2. 设置监听 `watcher` 只能是一次性的，每次触发后需要重复设置。
+
+3. `znode` 节点只存储简单的`byte`字节数组，如果存储对象，需要自己转换对象生成字节数组。（本项目只在`znode`节点存储`ip`和`port`，故不会涉及该问题）
 
 ## 本项目zookeeper作为服务注册中心：
 
