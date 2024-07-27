@@ -332,7 +332,7 @@ cd ./bin
 netstat -antp 
 ```
 
-![image-20230729132727838](分布式网络通信架构.assets/image-20230729132727838.png)
+![image-20230729132727838](./pictures/image-20230729132727838.png)
 
 ```shell
 # 启动zookeeper的客户端
